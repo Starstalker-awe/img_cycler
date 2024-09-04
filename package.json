@@ -1,0 +1,22 @@
+{
+  "name": "img_cycle",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/cli-progress": "^3.11.6",
+    "@types/uuid": "^10.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "cli-progress": "^3.12.0",
+    "elysia": "^1.1.11",
+    "sharp": "^0.33.5",
+    "uuid": "^10.0.0"
+  },
+  "scripts": {
+    "start": "bun run main.ts"
+  }
+}
