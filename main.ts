@@ -53,15 +53,4 @@ const server = new Elysia()
         "Cache-Control": "no-store"
     }});
 })
-.listen(5001);
-
-// +-------------------------+
-// | Re-launch on new images |
-// +-------------------------+
-fs.watch(`${import.meta.dir}/imgs/`, () => {
-    Bun.spawn({
-        cmd: `bun run ${import.meta.dir}/main.ts`.split(" "),
-        stdout: "inherit"
-    }).unref();
-    process.exit(0);
-});
+.listen(3000);

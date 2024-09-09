@@ -12,5 +12,5 @@ COPY . .
 
 
 USER bun
-EXPOSE 5001/tcp
+EXPOSE 3000/tcp
 ENTRYPOINT [ "bun", "run", "main.ts" ]
