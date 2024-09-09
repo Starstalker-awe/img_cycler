@@ -1,0 +1,21 @@
+name: Build and push Docker image
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: string
+        uses: ASzc/change-string-case-action@v6
+        with:
+          string: ${{ github.repository }}
+      - name: Build and push image
+        run: |
+          docker login -u ${{ github.actor }} -p ${{ secrets.KEY }} ghcr.io
+          docker build . --tag ghcr.io/${{ steps.string.outputs.lowercase }}:latest
+          docker push ghcr.io/${{ steps.string.outputs.lowercase }}:latest
